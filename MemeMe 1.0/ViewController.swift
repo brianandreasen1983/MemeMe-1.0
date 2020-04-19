@@ -14,19 +14,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var botomTextField: UITextField!
-    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var bottomToolbar: UIToolbar!
     @IBOutlet weak var topToolbar: UIToolbar!
     
     let pickerController = UIImagePickerController()
     
-    //MARK -- TO DO: Look up enum two case state cases so you can fix this
     enum ImageState {
         case hasImage
         case noImage
     }
     
-    // MARK -- TO DO: Replace the state for toolbar state with this enum.
     enum ToolbarState {
         case show
         case hide
@@ -43,7 +41,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pickerController.delegate = self
         topTextField.delegate = self
         botomTextField.delegate = self
-        //        shareButton.isEnabled = false
         configureButtons(.disabled)
         
         
@@ -105,13 +102,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 return
             }
         }
+        
+        // MARK -- TO DO: popover controller for iPad.
+        if let popover = activityVC.popoverPresentationController {
+//            popover.sourceView = self.view
+            popover.barButtonItem = shareButton
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imagePickerView.image = image
-            //            shareButton.isEnabled = true
             configureButtons(.enabled)
         }
         
@@ -169,7 +171,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
-    // MARK - TODO: This should be tied to the activity view controller specifically to the action the user selects in the way to share.
     func save() {
         let meme = Meme(topText: topTextField.text!, bottomText: botomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
     }
@@ -180,7 +181,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             shareButton.isEnabled = true
         case .disabled:
             shareButton.isEnabled = false
-            
         }
     }
     

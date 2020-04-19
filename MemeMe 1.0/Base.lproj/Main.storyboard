@@ -48,9 +48,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <items>
-                                    <barButtonItem systemItem="action" id="p2W-WC-6Rg">
+                                    <barButtonItem systemItem="action" id="Ic1-Tc-mre">
                                         <connections>
-                                            <action selector="share:" destination="BYZ-38-t0r" id="KRs-L9-t0c"/>
+                                            <action selector="share:" destination="BYZ-38-t0r" id="H3H-S9-W7F"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -70,7 +70,7 @@
                         <outlet property="bottomToolbar" destination="a0c-LW-vGj" id="Py0-29-mES"/>
                         <outlet property="cameraButton" destination="3ln-cQ-E4o" id="eDg-rK-2r5"/>
                         <outlet property="imagePickerView" destination="lD0-6p-OSP" id="Ff6-S8-RNF"/>
-                        <outlet property="shareButton" destination="p2W-WC-6Rg" id="H10-vH-j1k"/>
+                        <outlet property="shareButton" destination="Ic1-Tc-mre" id="hrC-md-imI"/>
                         <outlet property="topTextField" destination="jGu-Je-SwT" id="cgx-h3-0Uz"/>
                         <outlet property="topToolbar" destination="1pK-td-PQv" id="Qm2-IA-j0B"/>
                     </connections>
