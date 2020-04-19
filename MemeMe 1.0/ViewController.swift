@@ -20,11 +20,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     let pickerController = UIImagePickerController()
     
-    enum ImageState {
-        case hasImage
-        case noImage
-    }
-    
     enum ToolbarState {
         case show
         case hide
@@ -103,7 +98,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
         
-        // MARK -- TO DO: popover controller for iPad.
         if let popover = activityVC.popoverPresentationController {
 //            popover.sourceView = self.view
             popover.barButtonItem = shareButton
