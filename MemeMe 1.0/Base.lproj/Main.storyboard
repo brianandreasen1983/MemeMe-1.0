@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,15 +12,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe_1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BAh-Y2-8PI">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1346"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r1Q-Zg-pqf">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r1Q-Zg-pqf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem id="MI9-1G-Dsn">
                                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="tii-FY-1Rd">
@@ -31,9 +30,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6i6-II-9O3">
-                                <rect key="frame" x="0.0" y="1302" width="1024" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6i6-II-9O3">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="camera" id="05f-wH-6fY">
                                         <connections>
@@ -48,29 +46,32 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hwf-T6-6Bt" userLabel="Bottom Text Field">
-                                <rect key="frame" x="0.0" y="1231" width="1024" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xwu-1x-ip9" userLabel="Top Text Field">
+                                <rect key="frame" x="0.0" y="115" width="414" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xwu-1x-ip9" userLabel="Top Text Field">
-                                <rect key="frame" x="0.0" y="78" width="1024" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hwf-T6-6Bt" userLabel="Bottom Text Field">
+                                <rect key="frame" x="0.0" y="752" width="414" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Xwu-1x-ip9" firstAttribute="centerX" secondItem="BAh-Y2-8PI" secondAttribute="centerX" id="Gsd-jm-Exg"/>
-                            <constraint firstItem="BAh-Y2-8PI" firstAttribute="top" secondItem="Xwu-1x-ip9" secondAttribute="bottom" constant="-112" id="Ond-JI-Rdv"/>
-                            <constraint firstItem="hwf-T6-6Bt" firstAttribute="centerX" secondItem="BAh-Y2-8PI" secondAttribute="centerX" id="Pr6-aP-5wz"/>
-                            <constraint firstItem="hwf-T6-6Bt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RNs-71-qTN"/>
-                            <constraint firstItem="BAh-Y2-8PI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RON-T7-Z8n"/>
-                            <constraint firstItem="BAh-Y2-8PI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T6P-hA-kT3"/>
-                            <constraint firstItem="BAh-Y2-8PI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Wj3-J3-r84"/>
-                            <constraint firstItem="BAh-Y2-8PI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="X3l-9n-Rn2"/>
-                            <constraint firstItem="hwf-T6-6Bt" firstAttribute="top" secondItem="BAh-Y2-8PI" secondAttribute="bottom" constant="-115" id="aNR-Ny-RJT"/>
-                            <constraint firstItem="hwf-T6-6Bt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="iN1-UK-CFW"/>
+                            <constraint firstItem="BAh-Y2-8PI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="06G-HJ-lE5"/>
+                            <constraint firstItem="r1Q-Zg-pqf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="38b-GU-XfV"/>
+                            <constraint firstItem="r1Q-Zg-pqf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EEm-pc-bZL"/>
+                            <constraint firstItem="Xwu-1x-ip9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mxk-t7-0K0"/>
+                            <constraint firstItem="Xwu-1x-ip9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UVX-kY-N64"/>
+                            <constraint firstItem="6i6-II-9O3" firstAttribute="top" secondItem="hwf-T6-6Bt" secondAttribute="bottom" constant="32" id="VHx-Ec-dLN"/>
+                            <constraint firstItem="Xwu-1x-ip9" firstAttribute="top" secondItem="r1Q-Zg-pqf" secondAttribute="bottom" constant="27" id="WoD-At-UfA"/>
+                            <constraint firstItem="r1Q-Zg-pqf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gTP-G7-TOr"/>
+                            <constraint firstItem="BAh-Y2-8PI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="h8S-kl-PSD"/>
+                            <constraint firstItem="BAh-Y2-8PI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kBM-aj-PrL"/>
+                            <constraint firstItem="hwf-T6-6Bt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="n4w-5O-Iy0"/>
+                            <constraint firstItem="hwf-T6-6Bt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pW6-64-5x1"/>
+                            <constraint firstItem="BAh-Y2-8PI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zBr-iV-gte"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -86,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1055.2734375" y="20.644216691068813"/>
+            <point key="canvasLocation" x="-1056.5217391304348" y="20.089285714285712"/>
         </scene>
     </scenes>
 </document>
