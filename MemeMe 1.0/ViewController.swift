@@ -16,7 +16,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var botomTextField: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var bottomToolbar: UIToolbar!
-    @IBOutlet weak var topToolbar: UIToolbar!
+    @IBOutlet weak var navigationBar: UINavigationBar!
     
     let pickerController = UIImagePickerController()
     
@@ -99,7 +99,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         if let popover = activityVC.popoverPresentationController {
-//            popover.sourceView = self.view
             popover.barButtonItem = shareButton
         }
     }
@@ -182,10 +181,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         switch toolbarState {
         case .show:
             bottomToolbar.isHidden = false
-            topToolbar.isHidden = false
+            navigationBar.isHidden = false
         case .hide:
             bottomToolbar.isHidden = true
-            topToolbar.isHidden = true
+            navigationBar.isHidden = true
         }
     }
 }
