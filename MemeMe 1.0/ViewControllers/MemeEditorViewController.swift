@@ -32,29 +32,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        pickerController.delegate = self
-        topTextField.delegate = self
-        botomTextField.delegate = self
         configureButtons(.disabled)
-        
-        
-        topTextField.text = "TOP"
-        topTextField.textAlignment = NSTextAlignment.center
-        botomTextField.text = "BOTTOM"
-        botomTextField.textAlignment = NSTextAlignment.center
-        
+        styleTextField(topTextField, "ENTER TOP TEXT")
+        styleTextField(botomTextField, "ENTER BOTTOM TEXT")
+    }
+    
+    func styleTextField(_ textField: UITextField, _ defaultText: String) {
         let memeTextAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.strokeColor: UIColor.black,
-            NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSAttributedString.Key.strokeWidth: NSNumber.init(value: 3.0)
-            
-        ]
+              NSAttributedString.Key.strokeColor: UIColor.black,
+              NSAttributedString.Key.foregroundColor: UIColor.white,
+              NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+              NSAttributedString.Key.strokeWidth: NSNumber.init(value: 3.0)
+              
+          ]
         
-        // Assigns the styling for top and bottom text fields
-        topTextField.defaultTextAttributes = memeTextAttributes
-        botomTextField.defaultTextAttributes = memeTextAttributes
+        textField.text = defaultText
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
+        textField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,14 +65,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromKeyboardNotifications()
     }
     
+    func pickFromSource(_ source: UIImagePickerController.SourceType) {
+        pickerController.delegate = self
+        pickerController.sourceType = source
+        present(pickerController, animated: true, completion: nil)
+
+    }
+    
     @IBAction func pickAnImageFromLibrary(_ sender: Any) {
-        pickerController.sourceType = .photoLibrary
+        pickFromSource(.photoLibrary)
         present(pickerController, animated: true, completion: nil)
     }
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-        pickerController.sourceType = .camera
-        present(pickerController, animated: true, completion: nil)
+        pickFromSource(.camera)
     }
     
     @IBAction func share(_ sender: Any) {
@@ -128,7 +129,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     @objc func keyboardWillShow(_ notification:Notification) {
-        view.frame.origin.y = -getKeyboardHeight(notification)
+        if (botomTextField.isEditing) {
+            view.frame.origin.y = -getKeyboardHeight(notification)
+        }
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
@@ -165,7 +168,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func save() {
-        let meme = Meme(topText: topTextField.text!, bottomText: botomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
+        _ = Meme(topText: topTextField.text!, bottomText: botomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
     }
     
     func configureButtons(_ buttonState: ButtonState) {
