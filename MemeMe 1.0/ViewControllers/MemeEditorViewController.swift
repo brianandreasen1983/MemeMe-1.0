@@ -42,7 +42,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
               NSAttributedString.Key.strokeColor: UIColor.black,
               NSAttributedString.Key.foregroundColor: UIColor.white,
               NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-              NSAttributedString.Key.strokeWidth: NSNumber.init(value: 3.0)
+              NSAttributedString.Key.strokeWidth: NSNumber.init(value: -2.5)
               
           ]
         
@@ -69,7 +69,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pickerController.delegate = self
         pickerController.sourceType = source
         present(pickerController, animated: true, completion: nil)
-
     }
     
     @IBAction func pickAnImageFromLibrary(_ sender: Any) {
